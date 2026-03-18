@@ -1,0 +1,38 @@
+# Compiled Output
+dist/
+dist-tsc/
+build/
+
+# Node Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.pnpm-debug.log
+
+# Environment Variables
+.env
+.env.test
+.env.production
+.env.local
+
+# Coverage / Test Output
+coverage/
+.nyc_output/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# NestJS specific
+.nest/
+
+# IDE and Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
