@@ -4,6 +4,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { getAllTrees, getTreeStats, plantTree } from '../lib/api';
 import { useAuthStore } from '../store/authStore';
+import { useThemeStore } from '../store/themeStore';
 import { Link } from 'react-router-dom';
 
 // Fix leaflet default icon
@@ -34,6 +35,7 @@ function ClickHandler({ onMapClick }: { onMapClick: (lat: number, lng: number) =
 
 export function WorldMapPage() {
   const { user } = useAuthStore();
+  const theme = useThemeStore((state) => state.theme);
   const [trees, setTrees] = useState<any[]>([]);
   const [stats, setStats] = useState<any>(null);
   const [plantModal, setPlantModal] = useState<PlantModal | null>(null);
@@ -85,13 +87,23 @@ export function WorldMapPage() {
             {user ? 'Click anywhere on the map to plant a tree' : 'Sign in to plant trees'}
           </p>
         </div>
-        {stats && (
-          <div className="flex gap-4" style={{ flexWrap: 'wrap' }}>
-            <div className="badge badge-green">🌲 {stats.totalTrees} Total Trees</div>
-            <div className="badge badge-blue">✅ {stats.confirmedTrees} Confirmed</div>
-            {!user && <Link to="/login" className="btn btn-primary" style={{ textDecoration: 'none', padding: '0.4rem 1rem' }}>Sign In to Plant</Link>}
-          </div>
-        )}
+        <div className="flex items-center gap-4" style={{ flexWrap: 'wrap' }}>
+          <button
+            onClick={useThemeStore.getState().toggleTheme}
+            className="btn btn-surface"
+            style={{ padding: '0.5rem 1rem', fontSize: '0.85rem' }}
+          >
+            {theme === 'dark' ? '☀️ Light Tiles' : '🌙 Dark Tiles'}
+          </button>
+          
+          {stats && (
+            <>
+              <div className="badge badge-green">🌲 {stats.totalTrees} Total Trees</div>
+              <div className="badge badge-blue">✅ {stats.confirmedTrees} Confirmed</div>
+            </>
+          )}
+          {!user && <Link to="/login" className="btn btn-primary" style={{ textDecoration: 'none', padding: '0.4rem 1rem' }}>Sign In to Plant</Link>}
+        </div>
       </div>
 
       {successMsg && (
@@ -110,7 +122,12 @@ export function WorldMapPage() {
           maxBounds={[[-90, -180], [90, 180]]}
         >
           <TileLayer
-            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+            key={theme} // Force re-render of TileLayer when theme changes
+            url={
+              theme === 'light'
+                ? "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+                : "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+            }
             attribution='© <a href="https://carto.com/">CARTO</a>'
           />
           <ClickHandler onMapClick={handleMapClick} />
