@@ -7,13 +7,10 @@ import { WorldMapPage } from './pages/WorldMapPage';
 import { DashboardPage } from './pages/DashboardPage';
 import { AuthCallbackPage } from './pages/AuthCallbackPage';
 import { useAuthStore } from './store/authStore';
-import { useThemeStore } from './store/themeStore';
 import './index.css';
 
 function App() {
   const { token, fetchMe } = useAuthStore();
-  const theme = useThemeStore((state) => state.theme);
-
   // Restore session on mount
   useEffect(() => {
     if (token) fetchMe();
