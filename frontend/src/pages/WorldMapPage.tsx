@@ -164,7 +164,7 @@ export function WorldMapPage() {
       {/* Plant Modal */}
       {plantModal && (
         <div style={{
-          position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)',
+          position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(12px)',
           display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 9999, padding: '1rem',
         }}>
           <div className="card fade-in" style={{ width: '100%', maxWidth: 420 }}>

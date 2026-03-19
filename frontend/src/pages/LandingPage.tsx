@@ -40,8 +40,8 @@ export function LandingPage() {
           {/* Glass content wrapper for hero text */}
           <div style={{
             background: 'var(--card-grad-a)',
-            backdropFilter: 'blur(32px) saturate(150%)',
-            WebkitBackdropFilter: 'blur(32px) saturate(150%)',
+            backdropFilter: 'blur(48px) saturate(200%)',
+            WebkitBackdropFilter: 'blur(48px) saturate(200%)',
             border: '1px solid var(--card-border)',
             borderRadius: 'var(--radius-lg)',
             padding: '3rem 2rem',
