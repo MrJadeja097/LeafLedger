@@ -26,15 +26,15 @@
 
   /* Navbar surface (natural smoked glass) */
   --color-navbar-bg: rgba(0, 0, 0, 0.15);
-  --color-navbar-border: rgba(255, 255, 255, 0.1);
-  --color-navbar-shine: rgba(255, 255, 255, 0.15);
+  --color-navbar-border: rgba(255, 255, 255, 0.15);
+  --color-navbar-shine: rgba(255, 255, 255, 0.25);
   /* Card gradients (glassmorphism) */
   --card-grad-a: rgba(20, 30, 20, 0.15);
   --card-grad-b: rgba(5, 10, 5, 0.05);
   --stat-grad-a: rgba(25, 35, 25, 0.2);
   --stat-grad-b: rgba(10, 15, 10, 0.1);
-  --card-border: rgba(255, 255, 255, 0.15);
-  --card-shine: rgba(255, 255, 255, 0.25);
+  --card-border: rgba(255, 255, 255, 0.2);
+  --card-shine: rgba(255, 255, 255, 0.35);
   /* Input surface */
   --input-bg: rgba(22, 32, 22, 0.8);
   /* Leaflet map */
@@ -106,8 +106,8 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
   padding: 1.5rem;
-  backdrop-filter: blur(64px) saturate(200%);
-  -webkit-backdrop-filter: blur(64px) saturate(200%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
   box-shadow: 
     var(--shadow-card),
     inset 0 1.5px 1.5px var(--card-shine);
@@ -208,8 +208,8 @@ a:hover { text-decoration: underline; }
   padding: 1.25rem 1.5rem;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(64px) saturate(200%);
-  -webkit-backdrop-filter: blur(64px) saturate(200%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
   box-shadow: inset 0 1.5px 1.5px var(--card-shine);
 }
 .stat-card::before {
@@ -276,8 +276,8 @@ a:hover { text-decoration: underline; }
   pointer-events: auto; /* Catch clicks on the navbar itself */
   width: 90%; max-width: 1200px;
   background: var(--color-navbar-bg);
-  backdrop-filter: blur(64px) saturate(200%);
-  -webkit-backdrop-filter: blur(64px) saturate(200%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
   border: 1px solid var(--color-navbar-border);
   box-shadow: 
     0 16px 40px rgba(0, 0, 0, 0.3),       /* Outer drop shadow */
