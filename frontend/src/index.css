@@ -28,13 +28,13 @@
   --color-navbar-bg: rgba(0, 0, 0, 0.15);
   --color-navbar-border: rgba(255, 255, 255, 0.15);
   --color-navbar-shine: rgba(255, 255, 255, 0.25);
-  /* Card gradients (glassmorphism) */
-  --card-grad-a: rgba(20, 30, 20, 0.15);
-  --card-grad-b: rgba(5, 10, 5, 0.05);
-  --stat-grad-a: rgba(25, 35, 25, 0.2);
-  --stat-grad-b: rgba(10, 15, 10, 0.1);
-  --card-border: rgba(255, 255, 255, 0.2);
-  --card-shine: rgba(255, 255, 255, 0.35);
+  /* Card gradients (Neutral Glass) */
+  --card-grad-a: rgba(255, 255, 255, 0.08); /* Sophisticated white tint */
+  --card-grad-b: rgba(255, 255, 255, 0.03);
+  --stat-grad-a: rgba(255, 255, 255, 0.1);
+  --stat-grad-b: rgba(255, 255, 255, 0.04);
+  --card-border: rgba(255, 255, 255, 0.25); /* More visible glass edge */
+  --card-shine: rgba(255, 255, 255, 0.45);
   /* Input surface */
   --input-bg: rgba(22, 32, 22, 0.8);
   /* Leaflet map */
@@ -106,8 +106,8 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
   padding: 1.5rem;
-  backdrop-filter: blur(40px) saturate(250%);
-  -webkit-backdrop-filter: blur(40px) saturate(250%);
+  backdrop-filter: blur(60px) saturate(200%);
+  -webkit-backdrop-filter: blur(60px) saturate(200%);
   box-shadow: 
     var(--shadow-card),
     inset 0 1.5px 1.5px var(--card-shine);
@@ -208,8 +208,8 @@ a:hover { text-decoration: underline; }
   padding: 1.25rem 1.5rem;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(40px) saturate(250%);
-  -webkit-backdrop-filter: blur(40px) saturate(250%);
+  backdrop-filter: blur(60px) saturate(200%);
+  -webkit-backdrop-filter: blur(60px) saturate(200%);
   box-shadow: inset 0 1.5px 1.5px var(--card-shine);
 }
 .stat-card::before {
